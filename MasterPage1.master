@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta charset="utf-8" />    
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <style type="text/css">
+
+        div{
+            height:20%;
+        }
+
+        #banner {
+            color: red;
+            font-size:2em;
+            font-family:'Copperplate Gothic',Papyrus,fantasy;
+            font-weight:900;
+            position:relative;
+            top: 5%;
+            left:3%;
+            width: 55%;
+        }
+
+        #logo{
+            float:right;
+            position:relative;
+            height:70%;
+            width:10%;
+            top: -65px;
+        }
+
+        #master{
+            background-color:yellow;
+        }
+
+        #menu{
+            font-size:20px;
+            position:relative;
+            width:90%;
+            table-layout:fixed;
+        }
+
+        #menu td{
+            position:relative;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+        <div id="master">
+            <p id="banner"> Welcome to Los Pollos Hermanos!</p><a href ="home.aspx"><img id="logo" src="images/Los_Pollos_Hermanos_logo.png" class="auto-style7" /></a>
+            <table id="menu">
+                <tr>
+                    <td><a href="home.aspx">Home</a></td>
+                    <td><a href="login.aspx">Login</a></td>
+                    <td><a href="openall.aspx">Open Page</a></td>
+                    <td><a href="register.aspx">Register</a></td>
+                    <td><a href="protecteditem.aspx">Make an Order!</a></td>
+                    <td><a href="admin.aspx">Admin</a></td>
+                    <td><a href="myaccount.aspx">Account</a></td>
+                </tr>
+            </table>
+            
+        </div>
+        <div id="content">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+        </div>
+</body>
+</html>

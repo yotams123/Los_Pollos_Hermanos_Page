@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "מטלה html דצמבר 2021", ".", "{15907667-736B-4143-B5D4-972FD33CF07B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64046"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Desktop\מדעי המחשב\יא\מטלה html דצמבר 2021\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64046\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64046"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Desktop\מדעי המחשב\יא\מטלה html דצמבר 2021\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64046\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64046"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15907667-736B-4143-B5D4-972FD33CF07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15907667-736B-4143-B5D4-972FD33CF07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F69E831E-1FE1-431F-948B-E1C6D059566D}
+	EndGlobalSection
+EndGlobal
