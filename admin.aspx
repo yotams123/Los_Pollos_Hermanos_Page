@@ -18,6 +18,7 @@
 
         #table{
             position:relative;
+            left:5%;
             float:left;
             width:40%;
         }
