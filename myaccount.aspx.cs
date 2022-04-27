@@ -58,6 +58,34 @@ public partial class _Default : System.Web.UI.Page
                 string s = "UPDATE [User_Info] SET mail='" + mail + "' WHERE uname='" + Session["username"] + "';";
                 MyAdoHelper.DoQuery("Database.mdf", s);
             }
+
+            string bday = Request.Form["birthday"];
+            if (bday != "")
+            {
+                string s = "UPDATE [User_Info] SET birthday='" + bday + "' WHERE uname='" + Session["username"] + "';";
+                MyAdoHelper.DoQuery("Database.mdf", s);
+            }
+
+            string loc = Request.Form["loc"];
+            if (loc != "")
+            {
+                string s = "UPDATE [User_Info] SET location='" + loc + "' WHERE uname='" + Session["username"] + "';";
+                MyAdoHelper.DoQuery("Database.mdf", s);
+            }
+
+            string phone = Request.Form["start"] + Request.Form["num"];
+            if (phone != "")
+            {
+                string s = "UPDATE [User_Info] SET phone='" + phone + "' WHERE uname='" + Session["username"] + "';";
+                MyAdoHelper.DoQuery("Database.mdf", s);
+            }
+
+            string gender = Request.Form["gender"];
+            if (gender != "")
+            {
+                string s = "UPDATE [User_Info] SET gender='" + gender + "' WHERE uname='" + Session["username"] + "';";
+                MyAdoHelper.DoQuery("Database.mdf", s);
+            }
         }
     }
 }
