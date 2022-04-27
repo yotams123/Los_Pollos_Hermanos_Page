@@ -42,6 +42,9 @@
                 checkUname() &&
                 checkPass() &&
                 checkEmail() &&
+                checkBday() &&
+                checkLoc() &&
+                checkGender() &&
                 checkPhone()
             )
             return flag;
@@ -154,6 +157,35 @@
 
         }
 
+        function checkBday() {
+            var flag = true;
+            var Bday = document.getElementById("birthday").value;
+            if (Bday == "") {
+                window.alert("Please enter your birthday");
+                flag = false;
+            }
+            return flag;
+        }
+
+        function checkLoc() {
+            var flag = true;
+            var loc = document.getElementById("loc").value;
+            if (loc == "") {
+                window.alert("Please enter your location");
+                flag = false;
+            }
+            return flag;
+        }
+
+        function checkGender() {
+            var flag = true;
+            var selected = document.querySelector('input[name="gender"]:checked');
+            if (selected == null) {
+                window.alert("Select a gender");
+                flag = false;
+            }
+            return flag;
+        }
 
         function checkPhone() {
             var flag = true;
