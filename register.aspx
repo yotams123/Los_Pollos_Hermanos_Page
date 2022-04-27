@@ -179,8 +179,8 @@
 
         function checkGender() {
             var flag = true;
-            var selected = document.querySelector('input[name="gender"]:checked');
-            if (selected == null) {
+            var gender = document.getElementById("gender").value;
+            if (gender == "") {
                 window.alert("Select a gender");
                 flag = false;
             }
@@ -228,7 +228,12 @@
                 <option value="In the USA, outside of the states above" />
                 <option value="Outside of the USA" />
             </datalist>
-            Gender:      Male <input type="radio" value="male" class="short" name="gender"/>     Female <input type="radio" value="female" class="short" name="gender"/> <br />
+            Gender:      <input list="genderlist" id="gender" name="gender" /><br />
+             <datalist id="genderlist">
+                 <option value="Male"/>
+                 <option value="Female"/>
+                 <option value="Other"/>
+             </datalist>
             Phone Number:   <input list="starts" id="start" name="start" class="short"/> <input type="text" id="num" name="num" /> <br />
             <datalist id="starts">
                 <option value="050" />

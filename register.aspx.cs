@@ -38,11 +38,13 @@ public partial class register : System.Web.UI.Page
             string mail = Request.Form["mail"];
             string birthday = Request.Form["birthday"];
             string loc = Request.Form["loc"];
+            string phone = Request.Form["start"] + Request.Form["num"];
+            string gender = Request.Form["gender"];
             string mailcheck = "SELECT * FROM [User_Info] WHERE mail='" + mail + "';";
             string usercheck = "SELECT * FROM [User_Info] WHERE uname='" + newuser + "';";
-            string sql = "INSERT INTO[User_Info] (fName, lname, uname, pass, mail) VALUES('" +
+            string sql = "INSERT INTO[User_Info] (fName, lname, uname, pass, mail, phone, birthday, gender, location) VALUES('" +
                 firstname + "', '" + lastname + "', '" + newuser + "', '" + newpass + "', '" +
-                mail + "');";
+                mail + "', '" + phone + "', '" + birthday + "', '" + gender + "', '" + loc + "');";
             if (MyAdoHelper.IsExist("Database.mdf", mailcheck))
             {
                 Response.Write("<script>alert('User already exists with that email')</script>");
