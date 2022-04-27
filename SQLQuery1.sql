@@ -1,1 +1,0 @@
-﻿SELECT * FROM [User_Info] ORDER BY 2;
