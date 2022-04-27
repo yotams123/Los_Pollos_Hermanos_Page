@@ -37,6 +37,7 @@ public partial class register : System.Web.UI.Page
             string newpass = Request.Form["newpass"];
             string mail = Request.Form["mail"];
             string birthday = Request.Form["birthday"];
+            string loc = Request.Form["loc"];
             string mailcheck = "SELECT * FROM [User_Info] WHERE mail='" + mail + "';";
             string usercheck = "SELECT * FROM [User_Info] WHERE uname='" + newuser + "';";
             string sql = "INSERT INTO[User_Info] (fName, lname, uname, pass, mail) VALUES('" +

@@ -44,7 +44,7 @@
                 checkEmail() &&
                 checkBday() &&
                 checkLoc() &&
-                checkGender() &&
+                checkGender()
                 checkPhone()
             )
             return flag;
