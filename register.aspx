@@ -196,7 +196,7 @@
                 <option value="In the USA, outside of the states above" />
                 <option value="Outside of the USA" />
             </datalist>
-            Gender:      Male<input type="radio" value="male" class="short"/>     Female<input type="radio" value="female" class="short" /> <br />
+            Gender:      Male <input type="radio" value="male" class="short" name="gender"/>     Female <input type="radio" value="female" class="short" name="gender"/> <br />
             Phone Number:   <input list="starts" id="start" name="start" class="short"/> <input type="text" id="num" name="num" /> <br />
             <datalist id="starts">
                 <option value="050" />
