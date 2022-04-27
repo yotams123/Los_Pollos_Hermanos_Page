@@ -18,7 +18,6 @@
 
         #table{
             position:relative;
-            left:5%;
             float:left;
             width:40%;
         }
@@ -58,6 +57,18 @@
             if (update_column == 'mail') {
                 return EmailCheck();
             }
+            if (update_column == 'phone') {
+                return PhoneCheck;
+            }
+            if (update_column == 'birthday') {
+                return BdayCheck;
+            }
+            if (update_column == 'gender') {
+                return GenderCheck;
+            }
+            if (update_column == 'location') {
+                return LocCheck
+            }
             if (update_column != "") {
                 window.alert("Enter a valid column name: Fname, lname, uname, pass or mail");                
                 return false;
@@ -76,7 +87,7 @@
             }
 
             var ordercol = document.getElementById("order").value;
-            if ((isNaN(ordercol) && ordercol != "") || ordercol < 2 || ordercol > 6) {
+            if ((isNaN(ordercol) || ordercol < 1 || ordercol > 6) {
                 window.alert("Enter valid column id to order by. Must be a number between 2-6");
                 return false;
             }
@@ -184,6 +195,49 @@
             return flag;
         }
 
+        function BdayCheck() {
+            var flag = true;
+            var Bday = document.getElementById("colval").value;
+            if (Bday == "") {
+                window.alert("Please enter a valid birthday");
+                flag = false;
+            }
+            return flag;
+        }
+
+        function LocCheck() {
+            var flag = true;
+            var loc = document.getElementById("colval").value;
+            if (loc == "") {
+                window.alert("Please enter your location");
+                flag = false;
+            }
+            return flag;
+        }
+
+        function GenderCheck() {
+            var flag = true;
+            var gender = document.getElementById("colval").value;
+            if (gender == "") {
+                window.alert("Select a gender");
+                flag = false;
+            }
+            return flag;
+        }
+
+        function PhoneCheck() {
+            var flag = true;
+            var phone = document.getElementById("colval").value;
+            if (isNaN(phone)) {
+                window.alert("please enter a valid number as your phone number");
+                flag = false;
+            }
+            if (phone.length != 10) {
+                window.alert("Your phone number must be 10 digits long");
+                flag = false;
+            }
+            return flag;
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -217,7 +271,7 @@
         <br />
         <p>
             <label for="order"> Enter column by which to order the table: </label>
-            <input type="text" name="order" id="order" />
+            <input type="text" name="order" id="order" value="1" />
         </p>
         <br />
             <input type="submit" id="submit" name="submit" value="submit" />
