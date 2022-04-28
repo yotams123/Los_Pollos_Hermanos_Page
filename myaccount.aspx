@@ -228,12 +228,7 @@
                 <option value="In the USA, outside of the states above" />
                 <option value="Outside of the USA" />
             </datalist>
-            Gender:      <input list="genderlist" name="gender" id="gender" /><br />
-            <datalist id="genderlist">
-                <option value="Male" />
-                <option value="Female" />
-                <option value="Other" />
-            </datalist>
+            Gender: Male<input type="radio" name="gender" id="male" value="male" />     Female<input type="radio" name="gender" id="female" value="female" /> <br />
             Phone Number:   <input list="starts" id="start" name="start" style="width:50px;" /> <input type="text" id="num" name="num" /> <br />
             <datalist id="starts">
                 <option value="050" />
