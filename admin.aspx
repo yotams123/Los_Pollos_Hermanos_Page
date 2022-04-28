@@ -87,8 +87,8 @@
             }
 
             var ordercol = document.getElementById("order").value;
-            if ((isNaN(ordercol) || ordercol == "" || ordercol < 1 || ordercol > 10)) {
-                window.alert("Enter valid column id to order by. Must be a number between 1-6");
+            if ((isNaN(ordercol) || ordercol == "" || Number(ordercol) < 1 || Number(ordercol) > 10)) {
+                window.alert("Enter valid column id to order by. Must be a number between 1-11");
                 return false;
             }
 
