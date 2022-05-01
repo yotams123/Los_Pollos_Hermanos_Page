@@ -30,7 +30,11 @@ public partial class _Default : System.Web.UI.Page
                 }
             }
             string ordercol = Request.Form["order"];
-            string sql = "SELECT * FROM [User_Info] ORDER BY " + ordercol + ";";
+            string sql = "SELECT * FROM [User_Info]";
+            if (ordercol != null)
+            {
+                sql = "SELECT * FROM [User_Info] ORDER BY " + ordercol + ";";
+            }
 
             tb = MyAdoHelper.printDataTable("database.mdf", sql);
             Response.Write("Hello, " + Session["username"] + "!</br>");
