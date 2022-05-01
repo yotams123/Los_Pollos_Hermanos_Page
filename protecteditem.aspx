@@ -69,45 +69,88 @@
 
     </style>
     <script>
+        var needSauce = false;
 
         function addSandwich() {
-            document.getElementById("order").innerHTML += " (ABQ Sandwich, $8.00)";
-            var price = document.getElementById("total").innerHTML;
-            var pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
-            document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+            if (needSauce == false) {
+                document.getElementById("order").innerHTML += " ABQ Sandwich, $8.00";
+                var price = document.getElementById("total").innerHTML;
+                var pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
+                document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+                needSauce = true;
+            }
+            else {
+                window.alert("Choose a sauce to go with your item");
+            }
         }
 
         function addTenders() {
-            document.getElementById("order").innerHTML += " (Chicken Tenders, $7.50)";
-            var price = document.getElementById("total").innerHTML;
-            var pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
-            document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+            if (needSauce == false) {
+                document.getElementById("order").innerHTML += " Chicken Tenders, $7.50";
+                var price = document.getElementById("total").innerHTML;
+                var pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
+                document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+                needSauce = true;
+            }
+            else {
+                window.alert("Choose a sauce to go with your item");
+            }
         }
 
         function addFries() {
-            document.getElementById("order").innerHTML += " (Fring Fries, $7.00)";
-            var price = document.getElementById("total").innerHTML;
-            var pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
-            document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+            if (needSauce == false) {
+                document.getElementById("order").innerHTML += " Fring Fries, $7.00";
+                var price = document.getElementById("total").innerHTML;
+                var pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
+                document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+                needSauce = true;
+            }
+            else {
+                window.alert("Choose a sauce to go with your item");
+            }
         }
 
         function addSlaw() {
-            document.getElementById("order").innerHTML += " (Slaw Goodman, $6.00)";
-            var price = document.getElementById("total").innerHTML;
-            var pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
-            document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+            if (needSauce == false) {
+                document.getElementById("order").innerHTML += " Slaw Goodman, $6.00";
+                var price = document.getElementById("total").innerHTML;
+                var pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
+                document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+                needSauce = true;
+            }
+            else {
+                window.alert("Choose a sauce to go with your item");
+            }
         }
 
         function addBBQ() {
-            document.getElementById("order").innerHTML += ", with BBQ Sauce <br>";
+            if (needSauce == true) {
+                document.getElementById("order").innerHTML += ", with BBQ Sauce <br>";
+                needSauce = false;
+            }
+            else {
+                window.alert("You must choose another item to get another sauce");
+            }
         }
 
         function addRanch() {
-            document.getElementById("order").innerHTML += ", with Chef's Ranch <br>";
+            if (needSauce == true) {
+                document.getElementById("order").innerHTML += ", with Chef's Ranch <br>";
+                needSauce = false;
+            }
+            else {
+                window.alert("You must choose another item to get another sauce");
+            }
         }
 
         function addRemoulade() {
-            document.getElementById("order").innerHTML += ", with Remoulade <br>";
+            if (needSauce == true) {
+                document.getElementById("order").innerHTML += ", with Remoulade <br>";
+                needSauce = false;
+            }
+            else {
+                window.alert("You must choose another item to get another sauce");
+            }
         }
     </script>
 </asp:Content>
