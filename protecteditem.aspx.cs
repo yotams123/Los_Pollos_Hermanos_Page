@@ -21,6 +21,8 @@ public partial class protecteditem : System.Web.UI.Page
         {
             string order = Request.Form["ordersend"];
             Response.Write("<script>alert('" + order + "');</script>");
+            string price = Request.Form["price"];
+            Response.Write("<script>alert('" + price + "');</script>");
         }
     }
 }

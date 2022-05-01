@@ -169,6 +169,9 @@
                 window.alert("Choose another sauce to go with your meal");
                 return false;
             }
+            var price = document.getElementById("total").innerHTML;
+            var pricenum = Number(price.substr(8)).toFixed(2);
+            document.getElementById("price").value = pricenum;
             return true;
         }
     </script>
@@ -180,6 +183,7 @@
             <p id="order" name="order" value=""> Your order: <br /></p>
             <p id="total" name="total">Total: $0.00</p>
             <input type="text" id="ordersend" name="ordersend" value=" "/>
+            <input type="text" id="price" name="price" value=" "/>
             <input type="submit" name="submit" id="submit" value="Submit order" />
         </form>
         <table id="foodmenu" >
