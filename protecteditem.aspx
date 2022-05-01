@@ -64,43 +64,50 @@
            text-align: center;
            border-color:orangered;
            font-weight:bold;
+           cursor: pointer;
         }
 
     </style>
     <script>
-        var order = [];
-        var orderinput = document.getElementById("order");
 
         function addSandwich() {
-            order.push('ABQ sandwich', 8.00);
-            document.getElementById("order").innerHTML += " (ABQ Sandwich, $8.00) <br>";
+            document.getElementById("order").innerHTML += " (ABQ Sandwich, $8.00)";
             var price = document.getElementById("total").innerHTML;
             var pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
             document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
         }
 
         function addTenders() {
-            order.push('Chicken Tenders', 7.50);
-            document.getElementById("order").innerHTML += " (Chicken Tenders, $7.50) <br>";
+            document.getElementById("order").innerHTML += " (Chicken Tenders, $7.50)";
             var price = document.getElementById("total").innerHTML;
             var pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
             document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
         }
 
         function addFries() {
-            order.push('Fring Fries', 7.00);
-            document.getElementById("order").innerHTML += " (Fring Fries, $7.00) <br>";
+            document.getElementById("order").innerHTML += " (Fring Fries, $7.00)";
             var price = document.getElementById("total").innerHTML;
             var pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
             document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
         }
 
         function addSlaw() {
-            order.push('Slaw Goodman', 6.00);
-            document.getElementById("order").innerHTML += " (Slaw Goodman, $6.00) <br>";
+            document.getElementById("order").innerHTML += " (Slaw Goodman, $6.00)";
             var price = document.getElementById("total").innerHTML;
             var pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
             document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
+        }
+
+        function addBBQ() {
+            document.getElementById("order").innerHTML += ", with BBQ Sauce <br>";
+        }
+
+        function addRanch() {
+            document.getElementById("order").innerHTML += ", with Chef's Ranch <br>";
+        }
+
+        function addRemoulade() {
+            document.getElementById("order").innerHTML += ", with Remoulade <br>";
         }
     </script>
 </asp:Content>
@@ -131,9 +138,9 @@
         <h2 id="sauce">Your Meal Also Comes With A Sauce Of Your Choice: </h2>
          <table id="sauces">  
             <tr>
-                <td id="bbq">505 Barbeque Sauce</td>
-                <td id="ranch">Chef's Ranch</td>
-                <td id="remoulade">Remoulade</td>
+                <td id="bbq" onclick="addBBQ();">505 Barbeque Sauce</td>
+                <td id="ranch" onclick="addRanch();">Chef's Ranch</td>
+                <td id="remoulade" onclick="addRemoulade();">Remoulade</td>
             </tr>
         </table>
     </div>
