@@ -10,6 +10,10 @@
             cursor: pointer;
         }
 
+        #ordersend{
+            width:0px;
+        }
+
         #protected_page_title {
             color: orangered;
             font-size: 40px;
@@ -74,6 +78,7 @@
         function addSandwich() {
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " ABQ Sandwich, $8.00";
+                document.getElementById("ordersend").value += "(ABQ Sandwich, $8.00";
                 var price = document.getElementById("total").innerHTML;
                 var pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
@@ -87,6 +92,7 @@
         function addTenders() {
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Chicken Tenders, $7.50";
+                document.getElementById("ordersend").value += "(Chicken Tenders, $7.50";
                 var price = document.getElementById("total").innerHTML;
                 var pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
@@ -100,6 +106,7 @@
         function addFries() {
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Fring Fries, $7.00";
+                document.getElementById("ordersend").value += "(Fring Fries, $7.00";
                 var price = document.getElementById("total").innerHTML;
                 var pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
@@ -113,6 +120,7 @@
         function addSlaw() {
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Slaw Goodman, $6.00";
+                document.getElementById("ordersend").value += "(Slaw Goodman, $6.00";
                 var price = document.getElementById("total").innerHTML;
                 var pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
@@ -126,6 +134,7 @@
         function addBBQ() {
             if (needSauce == true) {
                 document.getElementById("order").innerHTML += ", with BBQ Sauce <br>";
+                document.getElementById("ordersend").value += ", with BBQ Sauce), ";
                 needSauce = false;
             }
             else {
@@ -136,6 +145,7 @@
         function addRanch() {
             if (needSauce == true) {
                 document.getElementById("order").innerHTML += ", with Chef's Ranch <br>";
+                document.getElementById("ordersend").value += ", with Chefs Ranch), ";
                 needSauce = false;
             }
             else {
@@ -146,20 +156,32 @@
         function addRemoulade() {
             if (needSauce == true) {
                 document.getElementById("order").innerHTML += ", with Remoulade <br>";
+                document.getElementById("ordersend").value += ", with Remoulade), ";
                 needSauce = false;
             }
             else {
                 window.alert("You must choose another item to get another sauce");
             }
         }
+
+        function checkOrder() {
+            if (needSauce == true) {
+                window.alert("Choose another sauce to go with your meal");
+                return false;
+            }
+            return true;
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="content5">
         <h1 id="protected_page_title" >Our menu: </h1>
-        <p id="order" name="order"> Your order: <br /></p>
-        <p id="total" name="total">Total: $0.00</p>
-        <%--<input type="button" id="buy" name="buy" runat="server" onserverclick="makeorder" />--%>
+        <form id="form1" name="form1" method="post" runat="server" action="" onsubmit="return checkOrder();">
+            <p id="order" name="order" value=""> Your order: <br /></p>
+            <p id="total" name="total">Total: $0.00</p>
+            <input type="text" id="ordersend" name="ordersend" value=" "/>
+            <input type="submit" name="submit" id="submit" value="Submit order" />
+        </form>
         <table id="foodmenu" >
             <tr>
                 <td id="sandwichtxt">ABQ Hot Chicken Sandwich   $8.00</td>

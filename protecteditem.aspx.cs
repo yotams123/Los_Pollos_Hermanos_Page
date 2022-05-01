@@ -16,5 +16,11 @@ public partial class protecteditem : System.Web.UI.Page
         }
         Response.Write("Hello, " + Session["username"] + "!<br />");
         Response.Write("Number of total visits to the site: " + Application["ViewCount"]);
+
+        if (Request.Form["submit"] != null)
+        {
+            string order = Request.Form["ordersend"];
+            Response.Write("<script>alert('" + order + "');</script>");
+        }
     }
 }
