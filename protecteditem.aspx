@@ -10,6 +10,22 @@
             cursor: pointer;
         }
 
+        form{
+            position:relative;
+            float:left;
+            width:30%;
+            }
+
+        h1{
+            position:relative;
+            left:45%;
+        }
+
+        h2{
+            position:relative;
+            left:32%;
+        }
+
         #ordersend{
             width:0px;
         }
@@ -17,12 +33,10 @@
         #protected_page_title {
             color: orangered;
             font-size: 40px;
-            text-align: center;
         }
 
         #foodmenu {
             position: relative;
-            left: 350px;
             top: 10px;
             border: 10px solid black;
             border-color:orangered;
@@ -51,14 +65,9 @@
             height:183px;
         }
 
-        #sauce{
-            position:relative;
-            left:380px;
-        }
-
         #sauces{
             position:relative;
-            left:355px;
+            left:31%;
             border-color:orangered;
         }
 
