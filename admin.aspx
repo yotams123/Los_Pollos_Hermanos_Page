@@ -22,6 +22,11 @@
             width:40%;
         }
         
+        #deliveries{
+            position:relative;
+            top:600%;
+        }
+
         #admin_title{
             position:relative;
             text-align:center;
@@ -41,6 +46,73 @@
     </style>
     <script>
         function checkUpdate() {
+            var update_table = document.getElementsByName("table");
+            var flag = true;
+            var chosentable = "";
+            var update_row = document.getElementById("updaterow").value;
+
+            for (var table of update_table) {
+                if (table.checked) {
+                    chosentable = table.value;
+                }
+            }
+            if (chosentable == "[User_Info]" && update_row != "") {
+                flag = checkUpdateUser();
+            }
+            if (chosentable == "[Orders]" && update_row != "") {
+                flag = checkUpdateFood();
+            }
+
+            if (chosentable == "") {
+                window.alert("Please choose a table to update");
+                return false;
+            }
+
+            
+            if (isNaN(update_row) && update_row != "") {
+                window.alert("Enter valid row id to update");
+                return false;
+            }
+
+            var del_row = document.getElementById("del").value;
+            if (isNaN(del_row) && del_row != "") {
+                window.alert("Enter valid row id to delete");
+                return false;
+            }
+
+            var ordercol = document.getElementById("order").value;
+            if ((isNaN(ordercol) || ordercol == "" || Number(ordercol) < 1 || Number(ordercol) > 10)) {
+                window.alert("Enter valid column id to order by. Must be a number between 1-11");
+                return false;
+            }
+
+            return flag;
+        }
+
+        function checkUpdateFood() {
+            var update_column = document.getElementById("colname").value;
+            if (update_column == "Content" || update_column == "Location") {
+                return true;
+            }
+            if (update_column == "TotalPrice") {
+                var price = document.getElementById("colval").value;
+                if (isNaN(price)) {
+                    window.alert("enter valid price");
+                    return false;
+                }
+                return true;
+            }
+            if (update_column == "Name") {
+                return FnameCheck;
+            }
+            if (update_column == "Phone") {
+                return PhoneCheck();
+            }
+            window.alert("Choose a valid column to update: Content, TotalPrice, Location, name, phone")
+            return false;
+        }
+
+        function checkUpdateUser() {
             var update_column = document.getElementById("colname").value;
             if (update_column == 'fName') {
                 return FnameCheck();
@@ -74,25 +146,6 @@
                 return false;
             }
 
-            var update_row = document.getElementById("updaterow").value;
-            if (isNaN(update_row)) {
-                window.alert("Enter valid row id to update");
-                return false;
-            }
-
-            var del_row = document.getElementById("del").value;
-            if (isNaN(del_row) && del_row != "") {
-                window.alert("Enter valid row id to delete");
-                return false;
-            }
-
-            var ordercol = document.getElementById("order").value;
-            if ((isNaN(ordercol) || ordercol == "" || Number(ordercol) < 1 || Number(ordercol) > 10)) {
-                window.alert("Enter valid column id to order by. Must be a number between 1-11");
-                return false;
-            }
-
-            return true;
         }
 
         function FnameCheck() {
@@ -248,6 +301,12 @@
     </div>
     <form id="form1" name="form1" method="post" runat="server" action="" onsubmit="return checkUpdate()">
         <p>
+            <label> Choose Table to update: </label><br />
+            User_Info: <input type="radio" name="table" id="userstable" value="[User_Info]" checked/>     Orders: <input type="radio" name="table" id="orderstable" value="[Orders]" /><br />
+        </p>
+        <br />
+        <br />
+        <p>
              <label for="del">Enter id of row to be deleted:</label> 
              <input type="text" id="del" name="del" value="" />
         </p>
@@ -276,5 +335,8 @@
         <br />
             <input type="submit" id="submit" name="submit" value="submit" />
     </form>
+    <div id="deliveries">
+        <%=ord %>
+    </div>
 </asp:Content>
 
