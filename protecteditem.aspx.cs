@@ -18,11 +18,28 @@ public partial class protecteditem : System.Web.UI.Page
         Response.Write("Number of total visits to the site: " + Application["ViewCount"]);
 
         if (Request.Form["submit"] != null)
-        {
+        {            
             string order = Request.Form["ordersend"];
-            Response.Write("<script>alert('" + order + "');</script>");
             string price = Request.Form["price"];
-            Response.Write("<script>alert('" + price + "');</script>");
+            
+            string sqlname = "SELECT fName FROM [User_Info] WHERE uname='" + Session["username"] + "';";
+            string name = MyAdoHelper.printDataTable("Database.mdf", sqlname);
+            name = name.Substring(26);
+            name = name.Substring(0, name.Length - 18);
+            
+            string sqlLoc = "SELECT location FROM [User_Info] WHERE uname='" + Session["username"] + "';";
+            string loc = MyAdoHelper.printDataTable("Database.mdf", sqlLoc);
+            loc = loc.Substring(26);
+            loc = loc.Substring(0, loc.Length - 18);
+
+            string sqlphone = "SELECT phone FROM [User_Info] WHERE uname='" + Session["username"] + "';";
+            string phone = MyAdoHelper.printDataTable("Database.mdf", sqlphone);
+            phone = phone.Substring(26);
+            phone = phone.Substring(0, phone.Length - 18);
+
+            string sqlInsertOrder = "INSERT INTO [Orders] VALUES ('" + order + "', '" + price + "', '" + name + "', '"
+                + loc + "', '"  + phone + "');";
+            MyAdoHelper.DoQuery("Database.mdf", sqlInsertOrder);
         }
     }
 }
