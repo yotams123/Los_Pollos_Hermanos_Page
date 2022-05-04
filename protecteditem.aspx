@@ -26,8 +26,8 @@
             left:32%;
         }
 
-        #ordersend{
-            width:0px;
+        input{
+            display:none;
         }
 
         #protected_page_title {
