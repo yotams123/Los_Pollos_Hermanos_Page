@@ -26,7 +26,7 @@
             left:32%;
         }
 
-        input{
+        .hidden{
             display:none;
         }
 
@@ -191,8 +191,8 @@
         <form id="form1" name="form1" method="post" runat="server" action="" onsubmit="return checkOrder();">
             <p id="order" name="order" value=""> Your order: <br /></p>
             <p id="total" name="total">Total: $0.00</p>
-            <input type="text" id="ordersend" name="ordersend" value=" "/>
-            <input type="text" id="price" name="price" value=" "/>
+            <input type="text" id="ordersend" name="ordersend" value=" " class="hidden"/>
+            <input type="text" id="price" name="price" value=" " class="hidden"/>
             <input type="submit" name="submit" id="submit" value="Submit order" />
         </form>
         <table id="foodmenu" >

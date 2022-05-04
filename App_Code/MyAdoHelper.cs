@@ -27,7 +27,7 @@ public class MyAdoHelper
         string path = HttpContext.Current.Server.MapPath("App_Data/");
         path += fileName;
         //string path = HttpContext.Current.Server.MapPath("App_Data/" + fileName);
-        string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\yotam\OneDrive\Desktop\Computer Science\Y11\YotamSoudryTask1HTML\App_Data\Database.mdf';Integrated Security=True";
+        string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\yotam\OneDrive\Desktop\Computer Science\Y11\YotamSoudryWebPage\App_Data\Database.mdf';Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(connString);
         return conn;
