@@ -82,14 +82,14 @@
 
     </style>
     <script>
-        var needSauce = false;
+        let needSauce = false;
 
         function addSandwich() {
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " ABQ Sandwich, $8.00";
                 document.getElementById("ordersend").value += "(ABQ Sandwich, $8.00";
-                var price = document.getElementById("total").innerHTML;
-                var pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
+                const price = document.getElementById("total").innerHTML;
+                const pricenum = (Number(price.substr(8)) + 8.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
                 needSauce = true;
             }
@@ -102,8 +102,8 @@
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Chicken Tenders, $7.50";
                 document.getElementById("ordersend").value += "(Chicken Tenders, $7.50";
-                var price = document.getElementById("total").innerHTML;
-                var pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
+                const price = document.getElementById("total").innerHTML;
+                const pricenum = (Number(price.substr(8)) + 7.50).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
                 needSauce = true;
             }
@@ -116,8 +116,8 @@
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Fring Fries, $7.00";
                 document.getElementById("ordersend").value += "(Fring Fries, $7.00";
-                var price = document.getElementById("total").innerHTML;
-                var pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
+                const price = document.getElementById("total").innerHTML;
+                const pricenum = (Number(price.substr(8)) + 7.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
                 needSauce = true;
             }
@@ -130,8 +130,8 @@
             if (needSauce == false) {
                 document.getElementById("order").innerHTML += " Slaw Goodman, $6.00";
                 document.getElementById("ordersend").value += "(Slaw Goodman, $6.00";
-                var price = document.getElementById("total").innerHTML;
-                var pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
+                const price = document.getElementById("total").innerHTML;
+                const pricenum = (Number(price.substr(8)) + 6.00).toFixed(2);
                 document.getElementById("total").innerHTML = "Total: $" + String(pricenum);
                 needSauce = true;
             }
@@ -178,8 +178,8 @@
                 window.alert("Choose another sauce to go with your meal");
                 return false;
             }
-            var price = document.getElementById("total").innerHTML;
-            var pricenum = Number(price.substr(8)).toFixed(2);
+            const price = document.getElementById("total").innerHTML;
+            const pricenum = Number(price.substr(8)).toFixed(2);
             document.getElementById("price").value = pricenum;
             return true;
         }

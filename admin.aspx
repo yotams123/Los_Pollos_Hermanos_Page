@@ -46,10 +46,10 @@
     </style>
     <script>
         function checkUpdate() {
-            var update_table = document.getElementsByName("table");
-            var flag = true;
-            var chosentable = "";
-            var update_row = document.getElementById("updaterow").value;
+            const update_table = document.getElementsByName("table");
+            let flag = true;
+            let chosentable = "";
+            const update_row = document.getElementById("updaterow").value;
 
             for (var table of update_table) {
                 if (table.checked) {
@@ -74,13 +74,13 @@
                 return false;
             }
 
-            var del_row = document.getElementById("del").value;
+            const del_row = document.getElementById("del").value;
             if (isNaN(del_row) && del_row != "") {
                 window.alert("Enter valid row id to delete");
                 return false;
             }
 
-            var ordercol = document.getElementById("order").value;
+            const ordercol = document.getElementById("order").value;
             if ((isNaN(ordercol) || ordercol == "" || Number(ordercol) < 1 || Number(ordercol) > 10)) {
                 window.alert("Enter valid column id to order by. Must be a number between 1-11");
                 return false;
@@ -90,12 +90,12 @@
         }
 
         function checkUpdateFood() {
-            var update_column = document.getElementById("colname").value;
+            const update_column = document.getElementById("colname").value;
             if (update_column == "Content" || update_column == "Location") {
                 return true;
             }
             if (update_column == "TotalPrice") {
-                var price = document.getElementById("colval").value;
+                const price = document.getElementById("colval").value;
                 if (isNaN(price)) {
                     window.alert("enter valid price");
                     return false;
@@ -113,7 +113,7 @@
         }
 
         function checkUpdateUser() {
-            var update_column = document.getElementById("colname").value;
+            const update_column = document.getElementById("colname").value;
             if (update_column == 'fName') {
                 return FnameCheck();
             }
@@ -149,8 +149,8 @@
         }
 
         function FnameCheck() {
-            var flag = true;
-            var fname = document.getElementById("colval").value;
+            let flag = true;
+            const fname = document.getElementById("colval").value;
             if (fname == "") {
                 alert("Please enter a first name");
                 flag = false;
@@ -159,7 +159,7 @@
                 alert("First name must start with a capital letter");
                 flag = false;
             }
-            var letters = /^[A-Za-z\s]+$/;
+            const letters = /^[A-Za-z\s]+$/;
             if (!(fname.match(letters))) {
                 flag = false;
                 window.alert("First name cannot contain spaces, numbers or special characters");
@@ -169,9 +169,9 @@
 
 
         function LnameCheck() {
-            var letters = /^[A-Za-z\s]+$/;
-            var flag = true;
-            var lname = document.getElementById("colval").value;
+            const letters = /^[A-Za-z\s]+$/;
+            let flag = true;
+            const lname = document.getElementById("colval").value;
             if (lname == "") {
                 window.alert("Please enter a last name");
                 flag = false;
@@ -189,13 +189,13 @@
 
 
         function UnameCheck() {
-            var flag = true;
-            var uname = document.getElementById("colval").value;
+            let flag = true;
+            const uname = document.getElementById("colval").value;
             if (uname.length < 4) {
                 flag = false;
                 window.alert("Username must be at least 4 characters long");
             }
-            var nums_letters = /^[A-Za-z0-9]+$/;
+            const nums_letters = /^[A-Za-z0-9]+$/;
             if (!uname.match(nums_letters)) {
                 flag = false;
                 window.alert("Username must include only numbers and letters");
@@ -205,9 +205,9 @@
 
 
         function PassCheck() {
-            var flag = true;
-            var pass = document.getElementById("colval").value;
-            var rules = [
+            let flag = true;
+            const pass = document.getElementById("colval").value;
+            const rules = [
                 /[0-9]/,
                 /[a-z]/,
                 /[A-Z]/,
@@ -217,7 +217,7 @@
                 flag = false;
                 window.alert("Password must contain at least 6 characters");
             }
-            var passflag = false;
+            const passflag = false;
             for (var i = 0; i < rules.length; i++) {
                 if (!rules[i].test(pass)) {
                     flag = false;
@@ -232,15 +232,15 @@
 
 
         function EmailCheck() {
-            var flag = true;
-            var email = document.getElementById("colval").value;
-            var letters = /^[A-Za-z\s]+$/;
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let flag = true;
+            const email = document.getElementById("colval").value;
+            const letters = /^[A-Za-z\s]+$/;
+            const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!email.match(mailformat)) {
                 window.alert("Email must start with a letter, contain an @ character and include a valid domain");
                 flag = false;
             }
-            var fmail = email[0];
+            const fmail = email[0];
             if (!fmail.match(letters)) {
                 window.alert("Email address must start with a letter");
                 flag = false;
@@ -249,8 +249,8 @@
         }
 
         function BdayCheck() {
-            var flag = true;
-            var Bday = document.getElementById("colval").value;
+            let flag = true;
+            const Bday = document.getElementById("colval").value;
             if (Bday == "") {
                 window.alert("Please enter a valid birthday");
                 flag = false;
@@ -259,8 +259,8 @@
         }
 
         function LocCheck() {
-            var flag = true;
-            var loc = document.getElementById("colval").value;
+            let flag = true;
+            const loc = document.getElementById("colval").value;
             if (loc == "") {
                 window.alert("Please enter your location");
                 flag = false;
@@ -269,8 +269,8 @@
         }
 
         function GenderCheck() {
-            var flag = true;
-            var gender = document.getElementById("colval").value;
+            let flag = true;
+            const gender = document.getElementById("colval").value;
             if (gender == "") {
                 window.alert("Select a gender");
                 flag = false;
@@ -279,8 +279,8 @@
         }
 
         function PhoneCheck() {
-            var flag = true;
-            var phone = document.getElementById("colval").value;
+            let flag = true;
+            const phone = document.getElementById("colval").value;
             if (isNaN(phone)) {
                 window.alert("please enter a valid number as your phone number");
                 flag = false;
