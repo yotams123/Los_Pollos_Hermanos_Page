@@ -107,4 +107,63 @@ public class MyAdoHelper
         return printStr;
     }
 
+    public static string printDataTable1(string fileName, string sql)
+    {
+        DataTable dt = ExecuteDataTable(fileName, sql);
+
+        string printStr = "<table border='1'>";
+
+        printStr += "<tr>";
+        printStr += "<td>Id</td>";
+        printStr += "<td>fName</td>";
+        printStr += "<td>lname</td>";
+        printStr += "<td>uname</td>";
+        printStr += "<td>pass</td>";
+        printStr += "<td>mail</td>";
+        printStr += "<td>phone</td>";
+        printStr += "<td>birthday</td>";
+        printStr += "<td>gender</td>";
+        printStr += "<td>location</td>";
+        printStr += "</tr>";
+
+        foreach (DataRow row in dt.Rows)
+        {
+            printStr += "<tr>";
+            foreach (object myItemArray in row.ItemArray)
+            {
+                printStr += "<td>" + myItemArray.ToString() + "</td>";
+            }
+            printStr += "</tr>";
+        }
+        printStr += "</table>";
+        return printStr;
+    }
+
+    public static string printDataTable2(string fileName, string sql)
+    {
+        DataTable dt = ExecuteDataTable(fileName, sql);
+
+        string printStr = "<table border='1'>";
+
+        printStr += "<tr>";
+        printStr += "<td>Id</td>";
+        printStr += "<td>Content</td>";
+        printStr += "<td>TotalPrice</td>";
+        printStr += "<td>Name</td>";
+        printStr += "<td>Location</td>";
+        printStr += "<td>Phone</td>";
+        printStr += "</tr>";
+
+        foreach (DataRow row in dt.Rows)
+        {
+            printStr += "<tr>";
+            foreach (object myItemArray in row.ItemArray)
+            {
+                printStr += "<td>" + myItemArray.ToString() + "</td>";
+            }
+            printStr += "</tr>";
+        }
+        printStr += "</table>";
+        return printStr;
+    }
 }

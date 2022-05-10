@@ -44,8 +44,8 @@ public partial class _Default : System.Web.UI.Page
                 }
             }
 
-            tb = MyAdoHelper.printDataTable("database.mdf", sql);
-            ord = MyAdoHelper.printDataTable("Databse.mdf", sqlfood);
+            tb = MyAdoHelper.printDataTable1("database.mdf", sql);
+            ord = MyAdoHelper.printDataTable2("Databse.mdf", sqlfood);
             Response.Write("Hello, " + Session["username"] + "!</br>");
             Response.Write("Number of total visits to the site: " + Application["ViewCount"]);
         }
