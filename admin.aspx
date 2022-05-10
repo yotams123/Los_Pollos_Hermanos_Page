@@ -56,9 +56,11 @@
                     chosentable = table.value;
                 }
             }
+
             if (chosentable == "[User_Info]" && update_row != "") {
                 flag = checkUpdateUser();
             }
+
             if (chosentable == "[Orders]" && update_row != "") {
                 flag = checkUpdateFood();
             }
@@ -130,16 +132,16 @@
                 return EmailCheck();
             }
             if (update_column == 'phone') {
-                return PhoneCheck;
+                return PhoneCheck();
             }
             if (update_column == 'birthday') {
-                return BdayCheck;
+                return BdayCheck();
             }
             if (update_column == 'gender') {
-                return GenderCheck;
+                return GenderCheck();
             }
             if (update_column == 'location') {
-                return LocCheck
+                return LocCheck();
             }
             if (update_column != "") {
                 window.alert("Enter a valid column name: Fname, lname, uname, pass or mail");                
@@ -217,7 +219,7 @@
                 flag = false;
                 window.alert("Password must contain at least 6 characters");
             }
-            const passflag = false;
+            let passflag = false;
             for (var i = 0; i < rules.length; i++) {
                 if (!rules[i].test(pass)) {
                     flag = false;
