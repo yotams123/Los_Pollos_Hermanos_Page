@@ -12,7 +12,6 @@ public partial class protecteditem : System.Web.UI.Page
         if (Session["username"] == null)
         {
             Response.Redirect("http://localhost:64046/home.aspx");
-            Response.Write("<script>alert('Must be logged in to view this page')</script>");
         }
         Response.Write("Hello, " + Session["username"] + "!<br />");
         Response.Write("Number of total visits to the site: " + Application["ViewCount"]);
