@@ -28,7 +28,6 @@ public partial class login : System.Web.UI.Page
         if (Session["username"] != null)
         {
             Response.Redirect("http://localhost:64046/home.aspx");
-            Response.Redirect("<script>alert('Already logged in')</script>");
         }
         else
         {
