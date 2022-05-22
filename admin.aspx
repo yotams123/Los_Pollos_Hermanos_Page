@@ -320,7 +320,7 @@
         </p>
         <br />
         <p>
-            <label for="colname"> Enter Column to update:</label>
+            <label for="colname"> Enter column to update:</label>
             <input type="text" name="colname" id="colname" />
         </p>
         <br />
