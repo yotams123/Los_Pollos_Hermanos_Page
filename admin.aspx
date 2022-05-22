@@ -304,7 +304,7 @@
     <form id="form1" name="form1" method="post" runat="server" action="" onsubmit="return checkUpdate()">
         <p>
             <label> Choose Table to update: </label><br />
-            User_Info: <input type="radio" name="table" id="userstable" value="[User_Info]" checked/>     Orders: <input type="radio" name="table" id="orderstable" value="[Orders]" /><br />
+            User_Info: <input type="radio" name="table" id="userstable" value="[User_Info]" checked="checked"/>     Orders: <input type="radio" name="table" id="orderstable" value="[Orders]" /><br />
         </p>
         <br />
         <br />
