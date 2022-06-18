@@ -10,7 +10,7 @@
         #form1{
             float:right;
             position:relative;
-            width:40%;
+            width:30%;
             padding-bottom: 10%;
             height:100%;
             top:-50%;
